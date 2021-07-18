@@ -1,0 +1,320 @@
+.result {
+  position: relative;
+  width: 100%;
+  background-color: #f2f2f2;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+
+  .empty-result {
+    width: 900px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 110px;
+    margin: 52px 0 67px;
+
+    img {
+      align-self: center;
+    }
+
+    div:first-child {
+      align-self: center;
+    }
+
+    h2 {
+      font-family: "Montserrat";
+      font-weight: bold;
+      font-size: 2.813rem;
+      line-height: 55px;
+      color: #a9a9a9;
+    }
+
+    h3 {
+      max-width: 220px;
+      font-family: Montserrat;
+      font-size: 1rem;
+      line-height: 27px;
+      color: #a9a9a9;
+    }
+  }
+
+  .fullfiled-result {
+    max-width: 900px;
+    margin: 52px auto 67px;
+    img {
+      height: 78px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-family: "Montserrat";
+      font-weight: bold;
+      font-size: 3.438rem;
+      line-height: 67px;
+      color: #0c261c;
+      margin-bottom: 54px;
+    }
+    .result-plants {
+      display: grid;
+      gap: 25px 20px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: minmax(1fr, 320px);
+
+      .plant-card {
+        background-color: #fff;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        &.favorite {
+          position: relative;
+          grid-area: span 2 / span 2;
+        }
+
+        .card-header {
+          padding-top: 16px;
+          display: flex;
+          flex: 1;
+          img {
+            width: 100%;
+            min-height: 150px;
+            object-fit: contain;
+          }
+
+          &.favorite {
+            img {
+              width: 100%;
+              min-height: 350px;
+              object-fit: contain;
+              margin-top: auto;
+              margin-bottom: auto;
+            }
+            .favorite-badge {
+              position: absolute;
+              top: 31px;
+              left: 0;
+              background-color: #75bc97;
+              padding: 6px 26px 15px 21px;
+              border-radius: 0 22px 22px 0;
+              color: #fff;
+              font-size: 1.125rem;
+              font-weight: 700;
+              line-height: 22px;
+              box-shadow: 0px 10px 28px rgba(0, 0, 0, 0.181163);
+            }
+          }
+        }
+        .card-details {
+          padding: 12px 18px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          flex: 1;
+          p {
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 28px;
+            color: #1e6b4e;
+          }
+
+          .details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .attributes {
+              display: grid;
+              grid-template-columns: auto auto auto;
+              gap: 7px;
+              img {
+                height: 22px;
+                width: 22px;
+                margin-top: auto;
+                margin-bottom: auto;
+              }
+            }
+          }
+
+          &.favorite {
+            flex-direction: row;
+            justify-content: center;
+            flex: 0;
+            padding: 16px 28px 28px;
+
+            p {
+              font-weight: 700;
+              font-size: 1.5rem;
+              line-height: 28px;
+              color: #1e6b4e;
+            }
+            p.title {
+              font-size: 2.188rem;
+              line-height: 37px;
+            }
+
+            .details {
+              flex-direction: column;
+              align-items: flex-end;
+              .attributes {
+                gap: 12px;
+                img {
+                  height: 25px;
+                  width: 25px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .back-to-top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #15573f;
+      border-radius: 999px;
+      padding: 14px;
+      color: #196146;
+      text-decoration: none;
+      font-size: 1rem;
+      line-height: 20px;
+
+      margin-top: 60px;
+
+      img {
+        height: 22px;
+        margin: 0 18px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .result {
+    .empty-result {
+      width: unset;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      gap: 38px;
+      margin: 47px 35px 32px;
+
+      h2 {
+        margin-bottom: 32px;
+      }
+      .no-result {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+      }
+    }
+    .fullfiled-result {
+      width: 100%;
+      margin: 0;
+
+      img {
+        height: 72px;
+        margin: 32px 46px 16px;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        line-height: 49px;
+        margin: 0 29px 16px 46px;
+      }
+
+      .result-plants {
+        display: grid;
+        padding-bottom: 8px;
+        gap: 16px;
+        overflow-x: scroll;
+        grid-template-columns:
+          11px
+          repeat(var(--total), 258px)
+          11px;
+        grid-template-rows: minmax(320px, 1fr);
+
+        &::before,
+        &::after {
+          content: "";
+        }
+
+        .plant-card {
+          &.favorite {
+            grid-area: unset;
+          }
+
+          .card-header {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+
+            &.favorite img,
+            img {
+              width: unset;
+              min-height: unset;
+              margin: 0;
+              height: 200px;
+              overflow: hidden;
+            }
+            &.favorite {
+              .favorite-badge {
+                position: absolute;
+                top: 20px;
+                left: 0;
+                background-color: #75bc97;
+                padding: 6px 14px 14px 17px;
+                border-radius: 0 22px 22px 0;
+                color: #fff;
+                font-size: 0.75rem;
+                font-weight: 700;
+                line-height: 16px;
+                box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.181163);
+              }
+            }
+          }
+          .card-details {
+            padding: 6px 21px;
+            &.favorite,
+            & {
+              flex-direction: column;
+              justify-content: flex-start;
+              flex: 0;
+              p {
+                font-size: 1rem;
+                line-height: 28px;
+                color: #1e6b4e;
+              }
+              p.title {
+                font-size: 1rem;
+                line-height: 37px;
+              }
+
+              .details {
+                flex-direction: row;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .attributes {
+                  display: grid;
+                  grid-template-columns: auto auto auto;
+                  gap: 7px;
+                  img {
+                    margin: 0;
+                    height: 22px;
+                    width: 22px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .back-to-top {
+        margin: 22px 19px;
+      }
+    }
+  }
+}

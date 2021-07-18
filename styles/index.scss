@@ -1,0 +1,34 @@
+@import "./cssreset.scss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  & *::-webkit-scrollbar-track {
+    background: transparent; /* color of the tracking area */
+  }
+  & *::-webkit-scrollbar-thumb {
+    background-color: #15573F; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 3px solid transparent; /* creates padding around scroll thumb */
+  }
+}
+
+$mobile-width: 780px;
+
+@import "./header.scss";
+@import "./filters.scss";
+@import "./loader.scss";
+@import "./results.scss";
