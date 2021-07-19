@@ -1,7 +1,7 @@
 @media screen and (min-width: $mobile-width) {
   .header {
     background-color: rgba(117, 188, 151, 1);
-    height: 500px;
+    height: 504px;
     display: flex;
     align-self: stretch;
     flex-direction: column;
@@ -14,29 +14,28 @@
     background-size: 60vw 100%, 30vw 100%, 335px 428px;
 
     .header-content {
-      padding: 58px 32px 54px;
+      padding: 56px 0 56px;
       margin-left: 32px;
-      max-width: 900px;
-      width: 100%;
+      max-width: 100%;
 
       .logo {
-        height: 25px;
-        margin-bottom: 42px;
+        height: 24px;
+        margin-bottom: 40px;
       }
 
       h1 {
         margin: 0;
         font-weight: 700;
         color: rgba(255, 255, 255, 1);
-        font-size: 4.375rem;
-        width: 400px;
-        line-height: 85px;
+        font-size: 4rem;
+        width: 50%;
+        line-height: 88px;
       }
 
       .arrow-down {
-        height: 39px;
-        width: 35px;
-        margin-top: 31px;
+        height: 32px;
+        width: 32px;
+        margin-top: 32px;
       }
     }
   }
@@ -49,19 +48,19 @@
     display: flex;
     background-image: url(../images/hero/mobile/mobile-leaves.png),
       url(../images/hero/mobile/mobile-plantperson.png);
-    background-position: top -40vw right, bottom 25px right 10vw;
+    background-position: top -40vw right, bottom 24px right 10vw;
     background-repeat: no-repeat, no-repeat;
     background-size: 100%, 80vw;
 
     .header-content {
-      padding: 36px 35px 0px;
+      padding: 36px 36px 0px;
       width: 100vw;
       height: 140vw;
       max-height: 100vh;
 
       .logo {
         height: 20px;
-        margin-bottom: 31px;
+        margin-bottom: 32px;
       }
 
       h1 {
@@ -73,8 +72,8 @@
       }
 
       .arrow-down {
-        height: 39px;
-        width: 35px;
+        height: 40px;
+        width: 40px;
         margin-top: 16px;
       }
     }
