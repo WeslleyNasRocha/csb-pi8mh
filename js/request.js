@@ -8,8 +8,8 @@ const ResultsWidget = {
     data: {
       sun: null,
       water: null,
-      pets: null,
-    },
+      pets: null
+    }
   },
   init: function () {
     s = this.settings;
@@ -17,9 +17,9 @@ const ResultsWidget = {
   },
   setData: function ({ sun, water, pets } = {}) {
     s.data = {
-      sun: sun ?? s.data.sun,
-      water: water ?? s.data.water,
-      pets: pets ?? s.data.pets,
+      sun: sun ? sun : s.data.sun,
+      water: water ? water : s.data.water,
+      pets: pets ? pets : s.data.pets
     };
   },
   getData: function () {
@@ -40,7 +40,7 @@ const ResultsWidget = {
         results.handleEmptyResults();
       }
     });
-  },
+  }
 };
 
 module.exports = ResultsWidget;
