@@ -28,43 +28,42 @@ function removeLoadingResults() {
 
 function getToxicAttribute(toxicity) {
   if (toxicity) {
-    return `<img src="${require("../images/icons/toxic.svg")}" alt="toxic" />`;
+    return `<img src="/images/icons/toxic.svg" alt="toxic" />`;
   }
-  return `<img src="${require("../images/icons/pet.svg")}" alt="pet friendly" />`;
+  return `<img src="/images/icons/pet.svg" alt="pet friendly" />`;
 }
 
 function getSunAttribute(sun) {
   switch (sun) {
     case "high":
-      return `<img src="${require("../images/icons/high-sun.svg")}" alt="high sun" />`;
+      return `<img src="/images/icons/high-sun.svg" alt="high sun" />`;
     case "low":
-      return `<img src="${require("../images/icons/low-sun.svg")}" alt="low sun" />`;
+      return `<img src="/images/icons/low-sun.svg" alt="low sun" />`;
 
+    case "no":
     default:
-    case "low":
-      return `<img src="${require("../images/icons/no-sun.svg")}" alt="no sun" />`;
+      return `<img src="/images/icons/no-sun.svg" alt="no sun" />`;
   }
 }
 
 function getWaterAttribute(water) {
   switch (water) {
     case "daily":
-      return `<img src="${require("../images/icons/3-drops.svg")}" alt="daily watering" />`;
+      return `<img src="/images/icons/3-drops.svg" alt="daily watering" />`;
     case "regularly":
-      return `<img src="${require("../images/icons/2-drops.svg")}" alt="regularly watering" />`;
+      return `<img src="/images/icons/2-drops.svg" alt="regularly watering" />`;
 
     case "rarely":
     default:
-      return `<img src="${require("../images/icons/1-drop.svg")}" alt="rarely watering" />`;
+      return `<img src="/images/icons/1-drop.svg" alt="rarely watering" />`;
   }
 }
 
 function renderResults(data) {
   let results = "";
-  // data.map(({ url, name, price, toxicity, sun, water, staff_favorite }) => {
   data
-    .sort((a, b) => (a.staff_favorite ? -1 : 0))
-    .map(({ url, name, price, toxicity, sun, water, staff_favorite }) => {
+    .sort((a) => (a.staff_favorite ? -1 : 0))
+    .forEach(({ url, name, price, toxicity, sun, water, staff_favorite }) => {
       const el = `
     <div class="plant-card ${staff_favorite ? "favorite" : ""}">
       <div class="card-header ${staff_favorite ? "favorite" : ""}">
@@ -94,13 +93,13 @@ function renderResults(data) {
 
   resultContainer.innerHTML = `
     <div class="fullfiled-result">
-        <img src="${require("../images/illustrations/pick.png")}" alt="Pick" />
+        <img src="/images/illustrations/pick.png" alt="Pick" />
         <h2>Our picks for you</h2>
         <div class="result-plants">
           ${results}
         </div>
         <a href="#filters" class="back-to-top">
-          <img src="${require("../images/icons/arrow-up.svg")}"/>
+          <img src="/images/icons/arrow-up.svg"/>
           <p>back to the top</p>
         </a>
       </div>`;
