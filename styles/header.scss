@@ -13,30 +13,29 @@
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-size: 60vw 100%, 30vw 100%, 335px 428px;
 
-    .header-content {
+    &__container {
       padding: 56px 0 56px;
       margin-left: 32px;
       max-width: 100%;
+    }
+    &__logo {
+      height: 24px;
+      margin-bottom: 40px;
+    }
 
-      .logo {
-        height: 24px;
-        margin-bottom: 40px;
-      }
+    &__title {
+      margin: 0;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 1);
+      font-size: 4rem;
+      width: 50%;
+      line-height: 88px;
+    }
 
-      h1 {
-        margin: 0;
-        font-weight: 700;
-        color: rgba(255, 255, 255, 1);
-        font-size: 4rem;
-        width: 50%;
-        line-height: 88px;
-      }
-
-      .arrow-down {
-        height: 32px;
-        width: 32px;
-        margin-top: 32px;
-      }
+    &__arrow {
+      height: 32px;
+      width: 32px;
+      margin-top: 32px;
     }
   }
 }
@@ -52,30 +51,30 @@
     background-repeat: no-repeat, no-repeat;
     background-size: 100%, 80vw;
 
-    .header-content {
+    &__container {
       padding: 36px 36px 0px;
       width: 100vw;
       height: 140vw;
       max-height: 100vh;
+    }
 
-      .logo {
-        height: 20px;
-        margin-bottom: 32px;
-      }
+    &__logo {
+      height: 20px;
+      margin-bottom: 32px;
+    }
 
-      h1 {
-        font-size: 2.5rem;
-        line-height: 49px;
-        margin: 0;
-        font-weight: 700;
-        color: rgba(255, 255, 255, 1);
-      }
+    &__title {
+      font-size: 2.5rem;
+      line-height: 49px;
+      margin: 0;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 1);
+    }
 
-      .arrow-down {
-        height: 40px;
-        width: 40px;
-        margin-top: 16px;
-      }
+    &__arrow {
+      height: 40px;
+      width: 40px;
+      margin-top: 16px;
     }
   }
 }

@@ -12,18 +12,18 @@ const ResultsWidget = {
   },
   createLoadingModal: function () {
     s.loadingModal.classList.add("loading-modal");
-    s.loadingModal.innerHTML = `<div class="lds-ring"><div></div><div></div><div></div><div></div></div>`;
+    s.loadingModal.innerHTML = `<div class="loading-modal__ring"><div></div><div></div><div></div><div></div></div>`;
   },
   handleEmptyResults: function () {
-    s.resultContainer.innerHTML = `<div class="empty-result">
-        <div>
-          <h2>No results yet...</h2>
-          <h3>
+    s.resultContainer.innerHTML = `<div class="result__empty-result">
+        <div class="text-container">
+          <h2 class="title">No results yet...</h2>
+          <h3 class="subtitle">
             Use the filters above to find the plant that best fits your
             environment :)
           </h3>
         </div>
-        <div class="no-result">
+        <div class="image_no-result">
           <img src="${require("../images/illustrations/no-results.png")}" alt="no results" />
         </div>
       </div>`;
@@ -74,20 +74,34 @@ const ResultsWidget = {
       .sort((a) => (a.staff_favorite ? -1 : 0))
       .forEach(({ url, name, price, toxicity, sun, water, staff_favorite }) => {
         const el = `
-          <div class="plant-card ${staff_favorite ? "favorite" : ""}">
-            <div class="card-header ${staff_favorite ? "favorite" : ""}">
-              <img src="${url}" alt="${name}" />
+          <div class="card ${staff_favorite ? "card_favorite" : ""}">
+            <div class="card__header ${
+              staff_favorite ? "card__header_favorite" : ""
+            }">
+              <img class="card__image ${
+                staff_favorite ? "card__image_favorite" : ""
+              }" src="${url}" alt="${name}" />
               ${
                 staff_favorite
-                  ? "<span class='favorite-badge'>✨ Staff favorite</span>"
+                  ? "<span class='card__favorite-badge'>✨ Staff favorite</span>"
                   : ""
               }
             </div>
-            <div class="card-details ${staff_favorite ? "favorite" : ""}">
-              <p class="title">${name}</p>
-              <div class="details">
-                <p>$${price}</p>
-                <div class="attributes">
+            <div class="card__details-container ${
+              staff_favorite ? "card__details-container_favorite" : ""
+            }">
+              <p class="card__text ${
+                staff_favorite ? "card__text_favorite" : ""
+              }">${name}</p>
+              <div class="card__details ${
+                staff_favorite ? "card__details_favorite" : ""
+              }">
+                <p class="card__text card__text_small ${
+                  staff_favorite ? "card__text_favorite" : ""
+                }">$${price}</p>
+                <div class="card__attributes ${
+                  staff_favorite ? "card__attributes_favorite" : ""
+                }">
                   ${this.getToxicAttribute(toxicity)}
                   ${this.getSunAttribute(sun)}
                   ${this.getWaterAttribute(water)}
@@ -101,10 +115,10 @@ const ResultsWidget = {
     s.resultContainer.style.setProperty("--total", data.length);
 
     s.resultContainer.innerHTML = `
-      <div class="fullfiled-result">
-        <img src="${require("../images/illustrations/pick.png")}" alt="Pick" />
-        <h2>Our picks for you</h2>
-        <div class="result-plants">
+      <div class="result__fullfiled-result">
+        <img class="result__pick-image" src="${require("../images/illustrations/pick.png")}" alt="Pick" />
+        <h2 class="result__title">Our picks for you</h2>
+        <div class="result__plants">
           ${results}
         </div>
         <a href="#filters" class="back-to-top">
